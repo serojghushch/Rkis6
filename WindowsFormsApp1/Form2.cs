@@ -14,6 +14,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form2 : Form
     {
+        public menu mn { get; set; }
         Model1 db;
         public Form2(Model1 db_)
         {
@@ -23,7 +24,10 @@ namespace WindowsFormsApp1
         
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            iDTextBox.Text = mn.ID.ToString();
+            nameTextBox.Text = mn.Name;
+            priceTextBox.Text = mn.Price.ToString();
+            vesTextBox.Text = mn.Ves.ToString();
         }
 
         private void b1_Click(object sender, EventArgs e)

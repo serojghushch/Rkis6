@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Form2
+    partial class Form3
     {
         /// <summary>
         /// Required designer variable.
@@ -33,13 +33,12 @@
             System.Windows.Forms.Label nameLabel;
             System.Windows.Forms.Label priceLabel;
             System.Windows.Forms.Label vesLabel;
-            this.b1 = new System.Windows.Forms.Button();
-            this.b2 = new System.Windows.Forms.Button();
-            this.iDTextBox = new System.Windows.Forms.TextBox();
             this.menuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iDTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.priceTextBox = new System.Windows.Forms.TextBox();
             this.vesTextBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             iDLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             priceLabel = new System.Windows.Forms.Label();
@@ -47,115 +46,105 @@
             ((System.ComponentModel.ISupportInitialize)(this.menuBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // menuBindingSource
+            // 
+            this.menuBindingSource.DataSource = typeof(WindowsFormsApp1.sqldata.menu);
+            this.menuBindingSource.CurrentChanged += new System.EventHandler(this.menuBindingSource_CurrentChanged);
+            // 
             // iDLabel
             // 
             iDLabel.AutoSize = true;
-            iDLabel.Location = new System.Drawing.Point(48, 37);
+            iDLabel.Location = new System.Drawing.Point(278, 85);
             iDLabel.Name = "iDLabel";
             iDLabel.Size = new System.Drawing.Size(21, 13);
-            iDLabel.TabIndex = 6;
+            iDLabel.TabIndex = 0;
             iDLabel.Text = "ID:";
-            // 
-            // nameLabel
-            // 
-            nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(48, 63);
-            nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(38, 13);
-            nameLabel.TabIndex = 8;
-            nameLabel.Text = "Name:";
-            // 
-            // priceLabel
-            // 
-            priceLabel.AutoSize = true;
-            priceLabel.Location = new System.Drawing.Point(48, 89);
-            priceLabel.Name = "priceLabel";
-            priceLabel.Size = new System.Drawing.Size(34, 13);
-            priceLabel.TabIndex = 10;
-            priceLabel.Text = "Price:";
-            // 
-            // vesLabel
-            // 
-            vesLabel.AutoSize = true;
-            vesLabel.Location = new System.Drawing.Point(48, 115);
-            vesLabel.Name = "vesLabel";
-            vesLabel.Size = new System.Drawing.Size(28, 13);
-            vesLabel.TabIndex = 12;
-            vesLabel.Text = "Ves:";
-            // 
-            // b1
-            // 
-            this.b1.Location = new System.Drawing.Point(76, 175);
-            this.b1.Name = "b1";
-            this.b1.Size = new System.Drawing.Size(75, 23);
-            this.b1.TabIndex = 4;
-            this.b1.Text = "Сохранить";
-            this.b1.UseVisualStyleBackColor = true;
-            this.b1.Click += new System.EventHandler(this.b1_Click);
-            // 
-            // b2
-            // 
-            this.b2.Location = new System.Drawing.Point(203, 175);
-            this.b2.Name = "b2";
-            this.b2.Size = new System.Drawing.Size(75, 23);
-            this.b2.TabIndex = 5;
-            this.b2.Text = "Выйти";
-            this.b2.UseVisualStyleBackColor = true;
             // 
             // iDTextBox
             // 
             this.iDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.menuBindingSource, "ID", true));
-            this.iDTextBox.Location = new System.Drawing.Point(92, 34);
+            this.iDTextBox.Location = new System.Drawing.Point(317, 82);
             this.iDTextBox.Name = "iDTextBox";
-            this.iDTextBox.Size = new System.Drawing.Size(218, 20);
-            this.iDTextBox.TabIndex = 7;
+            this.iDTextBox.Size = new System.Drawing.Size(100, 20);
+            this.iDTextBox.TabIndex = 1;
             // 
-            // menuBindingSource
+            // nameLabel
             // 
-            this.menuBindingSource.DataSource = typeof(WindowsFormsApp1.sqldata.menu);
+            nameLabel.AutoSize = true;
+            nameLabel.Location = new System.Drawing.Point(268, 125);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new System.Drawing.Size(38, 13);
+            nameLabel.TabIndex = 2;
+            nameLabel.Text = "Name:";
             // 
             // nameTextBox
             // 
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.menuBindingSource, "Name", true));
-            this.nameTextBox.Location = new System.Drawing.Point(92, 60);
+            this.nameTextBox.Location = new System.Drawing.Point(317, 122);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(218, 20);
-            this.nameTextBox.TabIndex = 9;
+            this.nameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nameTextBox.TabIndex = 3;
+            // 
+            // priceLabel
+            // 
+            priceLabel.AutoSize = true;
+            priceLabel.Location = new System.Drawing.Point(277, 155);
+            priceLabel.Name = "priceLabel";
+            priceLabel.Size = new System.Drawing.Size(34, 13);
+            priceLabel.TabIndex = 4;
+            priceLabel.Text = "Price:";
             // 
             // priceTextBox
             // 
             this.priceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.menuBindingSource, "Price", true));
-            this.priceTextBox.Location = new System.Drawing.Point(92, 86);
+            this.priceTextBox.Location = new System.Drawing.Point(317, 152);
             this.priceTextBox.Name = "priceTextBox";
-            this.priceTextBox.Size = new System.Drawing.Size(218, 20);
-            this.priceTextBox.TabIndex = 11;
+            this.priceTextBox.Size = new System.Drawing.Size(100, 20);
+            this.priceTextBox.TabIndex = 5;
+            // 
+            // vesLabel
+            // 
+            vesLabel.AutoSize = true;
+            vesLabel.Location = new System.Drawing.Point(278, 190);
+            vesLabel.Name = "vesLabel";
+            vesLabel.Size = new System.Drawing.Size(28, 13);
+            vesLabel.TabIndex = 6;
+            vesLabel.Text = "Ves:";
             // 
             // vesTextBox
             // 
             this.vesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.menuBindingSource, "Ves", true));
-            this.vesTextBox.Location = new System.Drawing.Point(92, 112);
+            this.vesTextBox.Location = new System.Drawing.Point(317, 183);
             this.vesTextBox.Name = "vesTextBox";
-            this.vesTextBox.Size = new System.Drawing.Size(218, 20);
-            this.vesTextBox.TabIndex = 13;
+            this.vesTextBox.Size = new System.Drawing.Size(100, 20);
+            this.vesTextBox.TabIndex = 7;
             // 
-            // Form2
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(317, 248);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(84, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Сохранение";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 291);
-            this.Controls.Add(iDLabel);
-            this.Controls.Add(this.iDTextBox);
-            this.Controls.Add(nameLabel);
-            this.Controls.Add(this.nameTextBox);
-            this.Controls.Add(priceLabel);
-            this.Controls.Add(this.priceTextBox);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(vesLabel);
             this.Controls.Add(this.vesTextBox);
-            this.Controls.Add(this.b2);
-            this.Controls.Add(this.b1);
-            this.Name = "Form2";
-            this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Controls.Add(priceLabel);
+            this.Controls.Add(this.priceTextBox);
+            this.Controls.Add(nameLabel);
+            this.Controls.Add(this.nameTextBox);
+            this.Controls.Add(iDLabel);
+            this.Controls.Add(this.iDTextBox);
+            this.Name = "Form3";
+            this.Text = "Form3";
             ((System.ComponentModel.ISupportInitialize)(this.menuBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -163,12 +152,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button b1;
-        private System.Windows.Forms.Button b2;
+
         private System.Windows.Forms.BindingSource menuBindingSource;
         private System.Windows.Forms.TextBox iDTextBox;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.TextBox priceTextBox;
         private System.Windows.Forms.TextBox vesTextBox;
+        private System.Windows.Forms.Button button1;
     }
 }
